@@ -1,0 +1,93 @@
+dependencies {
+    compile group: 'jstl', name: 'jstl', version: '1.2'
+    compile group: 'taglibs', name: 'standard', version: '1.1.2'
+
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+	compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+
+	compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.15.Final'
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.3.Final'
+
+    compile group: 'org.springframework', name: 'spring-core', version: '4.3.17.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.17.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version: '4.3.17.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version: '4.3.17.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.17.RELEASE'
+
+    compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.9.RELEASE'
+    compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '1.2'
+    
+    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.2.5.RELEASE'
+    compile group: 'org.springframework', name: 'spring-orm', version: '4.3.17.RELEASE'
+compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
+}
+
+
+code gym
+compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+compile group: 'org.springframework', name: 'spring-core', version: '4.3.17.RELEASE'
+compile group: 'org.springframework', name: 'spring-context', version: '4.3.17.RELEASE'
+compile group: 'org.springframework', name: 'spring-beans', version: '4.3.17.RELEASE'
+compile group: 'org.springframework', name: 'spring-web', version: '4.3.17.RELEASE'
+compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.0.Final'
+compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.3.0.Final'
+compile group: 'org.springframework', name: 'spring-orm', version: '4.3.17.RELEASE'
+
+compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.17.RELEASE'
+compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.9.RELEASE'
+compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.11.12.RELEASE'
+
+compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
+//Ngoai le
+compile group: 'org.aspectj', name: 'aspectjrt', version: '1.9.5'
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
+    compile group: 'org.springframework', name: 'spring-aop', version: '4.3.17.RELEASE'
+@EnableAspectJAutoProxy
+tao 1 tiem @Been log
+
+//xai trong buildgrapder tieng viet
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
+https://github.com/VuKieuAnh/Spring-JPA
+
+
+//tu nhan get set
+providedCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+
+
+// api
+    compile group: 'org.springframework', name: 'spring-tx', version: '4.3.17.RELEASE'    
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.5.3'
+//ajax
+compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.5'
+compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5
+
+//i18l
+@Bean
+public MessageSource messageSource() {
+ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+messageSource.setBasename("message");
+return messageSource;
+}
+Trong ðó, giá tr? "message" chính là tên file trong file message.properties.
+@Override
+public void addInterceptors(InterceptorRegistry registry) {
+LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
+interceptor.setParamName("lang");
+registry.addInterceptor(interceptor);
+}
+Interceptor này s? t? ð?ng phân tích tham s? lang ði kèm các request ð? xác ð?nh b?n ð?a hi?n t?i.
+
+Ti?p theo, b? sung bean localeResolver ð? s? d?ng thông tin v? b?n ð?a và s? d?ng message bundle týõng ?ng:
+
+@Bean
+public LocaleResolver localeResolver() {
+SessionLocaleResolver localeResolver = new SessionLocaleResolver();
+localeResolver.setDefaultLocale(new Locale("en"));
+return localeResolver;
+}
+? ðây, ta ð? khai báo m?t localeResolver l?y thông tin v? b?n ð?a t? session c?a ngý?i dùng, ð?ng th?i d? ph?ng s? d?ng ngôn ng? là “en”.
